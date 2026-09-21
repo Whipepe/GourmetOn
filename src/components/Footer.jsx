@@ -3,7 +3,7 @@ const Footer = () => {
     <>
       <footer className="w-full min-h-2 flex items-center justify-between py-4 px-8 box-border bg-red-900 text-white transition-colors duration-0.3s z-1000">
       <div className="footer-logo">
-        <h2>GourmetOn</h2>
+        <h2 className="text-xl">GourmetOn</h2>
       </div>
 
       <nav className="items-center flex space-x-4">
