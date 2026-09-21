@@ -38,7 +38,7 @@ const Contato = () => {
             </div>
           </div>
 
-          <div className="w-sm pt-4 bg-red-900 rounded-lg shadow-md p-4 flex flex-col items-center transition-0.3s hover:scale-105 text-white">
+          <div className="w-sm pt-4 bg-red-900 rounded-lg shadow-md p-4 flex flex-col items-center transition-0.3s hover:scale-105 text-white ">
             <h3 className="pb-4 text-2xl">Ricardo Salmerón</h3>
             <img src="/images/foto-ricardo.png" alt="Ricardo Salmerón" className="w-32 h-32 rounded-full object-cover" />
             <h4 className="text-xl">Desenvolvedor Back-end</h4>

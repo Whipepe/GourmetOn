@@ -1,31 +1,26 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Footer from './components/Footer'
 import Topbar from './components/Topbar'
-import Apresentacao from './pages/Apresentacao'
-import Contato from './pages/Contato'
-import Depoimentos from './pages/Depoimentos'
-import Funcionalidades from './pages/Funcionalidades'
-import Hero from './pages/Hero'
+import Apresentacao from './components/Apresentacao'
+import Contato from './components/Contato'
+import Depoimentos from './components/Depoimentos'
+import Funcionalidades from './components/Funcionalidades'
+import Hero from './components/Hero'
 
 
 function App() {
   return (
    <>
-        <Router>
-      <Topbar />
-
+    <Topbar/>
+    <div className='scroll-smooth'>
       <main>
-        <Routes>
-          <Route path="/" element={<Hero/>} />
-          <Route path="/apresentacao" element={<Apresentacao/>} />
-          <Route path="/funcionalidades" element={<Funcionalidades/>} />
-          <Route path="/depoimentos" element={<Depoimentos/>} />
-          <Route path="/contato" element={<Contato/>} />
-        </Routes>
+        <Hero/>
+        <Apresentacao/>
+        <Funcionalidades/>
+        <Depoimentos/>
+        <Contato/>
       </main>
-
-      <Footer />
-    </Router>
+    </div>
+    <Footer/>
    </> 
   )
 }
