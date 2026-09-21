@@ -11,9 +11,10 @@ const Topbar = () => {
 
             <nav className="flex space-x-4">
 
-                <a href="#home" className="hover:underline hover:font-bold text-white decoration-0 text-md">Home</a>
-                <a href="#publico" className="hover:underline hover:font-bold text-white decoration-0 text-md">Público</a>
-                <a href="#galeria" className="hover:underline hover:font-bold text-white decoration-0 text-md">Galeria</a>
+                <a href="#hero" className="hover:underline hover:font-bold text-white decoration-0 text-md">Home</a>
+                <a href="#apresentacao" className="hover:underline hover:font-bold text-white decoration-0 text-md">Apresentação</a>
+                <a href="#funcionalidades" className="hover:underline hover:font-bold text-white decoration-0 text-md">Funcionalidades</a>
+                <a href="#depoimentos" className="hover:underline hover:font-bold text-white decoration-0 text-md">Depoimentos</a>
                 <a href="#contato" className="hover:underline hover:font-bold text-white decoration-0 text-md">Contato</a>
                 {/* <button className="botao-tema" onClick={toggleDarkMode}>
                     {localStorage.getItem('darkMode') === 'true' ? "☀️" : "🌙"}
