@@ -7,7 +7,7 @@ const Contato = () => {
         <h3 className="text-2xl mb-12">Conheça nossa equipe!</h3>
 
         <section className="flex justify-center items-stretch gap-8 flex-wrap mb-8">
-          <div className="w-sm pt-4 bg-red-900 rounded-lg shadow-md p-4 flex flex-col items-center transition-0.3s hover:scale-105">
+          <div className="w-sm pt-4 bg-red-900 rounded-lg shadow-md p-4 flex flex-col items-center transition-0.3s hover:scale-105 text-white">
             <h3 className="pb-4 text-2xl">Felipe Rabelo</h3>
             <img src="/images/foto-felipe.png" alt="Felipe Rabelo" className="w-32 h-32 rounded-full object-cover" />
             <h4 className="text-xl">Desenvolvedor Front-end</h4>
@@ -23,7 +23,7 @@ const Contato = () => {
 
           </div>
 
-          <div className="w-sm pt-4 bg-red-900 rounded-lg shadow-md p-4 flex flex-col items-center transition-0.3s hover:scale-105">
+          <div className="w-sm pt-4 bg-red-900 rounded-lg shadow-md p-4 flex flex-col items-center transition-0.3s hover:scale-105 text-white">
             <h3 className="pb-4 text-2xl">Gustavo Tavares</h3>
             <img src="/images/foto-gustavo.png" alt="Gustavo Tavares " className="w-32 h-32 rounded-full object-cover" />
             <h4 className="text-xl">Documentação</h4>
@@ -38,7 +38,7 @@ const Contato = () => {
             </div>
           </div>
 
-          <div className="w-sm pt-4 bg-red-900 rounded-lg shadow-md p-4 flex flex-col items-center transition-0.3s hover:scale-105">
+          <div className="w-sm pt-4 bg-red-900 rounded-lg shadow-md p-4 flex flex-col items-center transition-0.3s hover:scale-105 text-white">
             <h3 className="pb-4 text-2xl">Ricardo Salmerón</h3>
             <img src="/images/foto-ricardo.png" alt="Ricardo Salmerón" className="w-32 h-32 rounded-full object-cover" />
             <h4 className="text-xl">Desenvolvedor Back-end</h4>
