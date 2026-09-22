@@ -101,13 +101,13 @@ const Funcionalidades = () => {
         {loading && (
           <p className="text-center">Buscando pratos...</p>
         )}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {pratos.map((prato) => (
-            <div key={prato.id} className="bg-white rounded-xl overflow-hidden shadow">
+            <div key={prato.id} className="flex flex-col h-full bg-white rounded-xl overflow-hidden shadow">
               <img src={prato.image} alt={prato.title} className="w-full h-48 object-cover" />
-              <div className="p-4">
-                <h5 className="font-bold text-lg">{prato.title}</h5>
-                <button onClick={() => buscarDetalhes(prato.id)} className="mt-4 w-full py-2 rounded-lg bg-red-900 text-white text-center font-semibold hover:bg-red-800">Ver detalhes</button>
+              <div className="flex flex-col grow p-4">
+                <h5 className="font-bold text-lg mb-4">{prato.title}</h5>
+                <button onClick={() => buscarDetalhes(prato.id)} className="mt-auto w-full py-2 rounded-lg bg-red-900 text-white text-center font-semibold hover:bg-red-800">Ver detalhes</button>
               </div>
             </div>
           ))}
