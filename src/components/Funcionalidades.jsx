@@ -114,101 +114,101 @@ const Funcionalidades = () => {
         </div>
 
         {pratoSelecionado && (
-  <div
-    className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"
-    onClick={() => setPratoSelecionado(null)}
-  >
-    <div
-      className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
-      onClick={(e) => e.stopPropagation()}
-    >
-      {loadingDetalhes ? (
-        <div className="p-10 text-center">
-          <p className="text-lg font-semibold">
-            Carregando detalhes...
-          </p>
-        </div>
-      ) : (
-        <>
-          {/* Cabeçalho */}
-          <div className="relative">
-            <img
-              src={pratoSelecionado.image}
-              alt={pratoSelecionado.title}
-              className="w-full h-64 object-cover"
-            />
-
-            <button
-              onClick={() => setPratoSelecionado(null)}
-              className="absolute top-4 right-4 bg-black/70 text-white w-10 h-10 rounded-full text-xl"
+          <div
+            className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"
+            onClick={() => setPratoSelecionado(null)}
+          >
+            <div
+              className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
             >
-              ×
-            </button>
-          </div>
+              {loadingDetalhes ? (
+                <div className="p-10 text-center">
+                  <p className="text-lg font-semibold">
+                    Carregando detalhes...
+                  </p>
+                </div>
+              ) : (
+                <>
+                  {/* Cabeçalho */}
+                  <div className="relative">
+                    <img
+                      src={pratoSelecionado.image}
+                      alt={pratoSelecionado.title}
+                      className="w-full h-64 object-cover"
+                    />
 
-          <div className="p-6">
-
-            {/* Nome */}
-            <h3 className="text-3xl font-bold mb-6">
-              {pratoSelecionado.title}
-            </h3>
-
-            {/* Ingredientes */}
-            <div className="mb-8">
-              <h4 className="text-xl font-bold mb-4">
-                🥕 Ingredientes
-              </h4>
-
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {pratoSelecionado.extendedIngredients?.map(
-                  (ingrediente) => (
-                    <li
-                      key={`${ingrediente.id}-${ingrediente.original}`}
-                      className="bg-gray-100 rounded-lg px-4 py-2"
+                    <button
+                      onClick={() => setPratoSelecionado(null)}
+                      className="absolute top-4 right-4 bg-black/70 text-white w-10 h-10 rounded-full text-xl"
                     >
-                      {ingrediente.original}
-                    </li>
-                  )
-                )}
-              </ul>
-            </div>
+                      ×
+                    </button>
+                  </div>
 
-            {/* Nutrição */}
-            <div>
-              <h4 className="text-xl font-bold mb-4">
-                📊 Informações nutricionais
-              </h4>
+                  <div className="p-6">
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    {/* Nome */}
+                    <h3 className="text-3xl font-bold mb-6">
+                      {pratoSelecionado.title}
+                    </h3>
 
-                {pratoSelecionado.nutrition?.nutrients
-                  ?.filter((nutriente) =>
-                    ["Calories", "Protein", "Carbohydrates", "Fat"]
-                      .includes(nutriente.name)
-                  )
-                  .map((nutriente) => (
-                    <div
-                      key={nutriente.name}
-                      className="bg-gray-100 rounded-lg p-4 text-center"
-                    >
-                      <p className="text-sm text-gray-500">
-                        {nutriente.name}
-                      </p>
+                    {/* Ingredientes */}
+                    <div className="mb-8">
+                      <h4 className="text-xl font-bold mb-4">
+                        🥕 Ingredientes
+                      </h4>
 
-                      <p className="text-xl font-bold">
-                        {Math.round(nutriente.amount)}
-                        {nutriente.unit}
-                      </p>
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {pratoSelecionado.extendedIngredients?.map(
+                          (ingrediente) => (
+                            <li
+                              key={`${ingrediente.id}-${ingrediente.original}`}
+                              className="bg-gray-100 rounded-lg px-4 py-2"
+                            >
+                              {ingrediente.original}
+                            </li>
+                          )
+                        )}
+                      </ul>
                     </div>
-                  ))}
-              </div>
-            </div>
 
-          </div>
-        </>
-      )}
+                    {/* Nutrição */}
+                    <div>
+                      <h4 className="text-xl font-bold mb-4">
+                        📊 Informações nutricionais
+                      </h4>
+
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+
+                        {pratoSelecionado.nutrition?.nutrients
+                          ?.filter((nutriente) =>
+                            ["Calories", "Protein", "Carbohydrates", "Fat"]
+                              .includes(nutriente.name)
+                          )
+                          .map((nutriente) => (
+                            <div
+                              key={nutriente.name}
+                              className="bg-gray-100 rounded-lg p-4 text-center"
+                            >
+                              <p className="text-sm text-gray-500">
+                                {nutriente.name}
+                              </p>
+
+                              <p className="text-xl font-bold">
+                                {Math.round(nutriente.amount)}
+                                {nutriente.unit}
+                              </p>
+                            </div>
+                          ))}
+                      </div>
+                    </div>
+
+                  </div>
+                </>
+        )}
+      </div>
     </div>
-  </div>
 )}
 
       </div>

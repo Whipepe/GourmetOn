@@ -2,10 +2,10 @@ import React from 'react'
 
 const Depoimentos = () => {
   return (
-    <div id="depoimentos" className="py-16 flex items-center min-h-screen bg-gray-200 flex-col">
+    <div id="depoimentos" className="flex py-16 flex-col items-center min-h-screen bg-gray-200 text-center"> 
       <h2 className="pb-4 text-3xl font-bold">Depoimentos</h2>
         <h3 className="text-2xl mb-12">O que nossos clientes dizem!</h3>
-        <div className="flex justify-center items-stretch gap-8 flex-wrap mb-8 text-white">
+        <div className="flex justify-center items-stretch gap-8 flex-wrap mb-8 text-white sm:col-end-2 max-w-7xl">
             <section className="flex justify-center items-stretch gap-8 flex-wrap mb-8 text-white">
             <div className="w-sm pt-4 bg-red-900 rounded-lg shadow-md p-4 flex flex-col items-center transition-0.3s hover:scale-105">
                 <h3 className="pb-4 text-2xl">João Silva</h3>
