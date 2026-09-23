@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 const Funcionalidades = () => {
 
   // ----- Estados do componente -----
-
   // Armazena o texto digitado pelo usuário no campo de busca
   const [busca, setBusca] = useState('');
 
@@ -25,7 +24,6 @@ const Funcionalidades = () => {
 
 
   // ----- Função de busca dos pratos -----
-
   const buscarPratos = async () => {
 
     // Verifica se o campo de busca está vazio
@@ -87,7 +85,6 @@ const Funcionalidades = () => {
 
 
   // ----- Função para buscar os detalhes de um prato -----
-
   const buscarDetalhes = async (id) => {
 
     // Ativa o indicador de carregamento dos detalhes
@@ -129,7 +126,6 @@ const Funcionalidades = () => {
       id="funcionalidades"
       className="py-16 flex items-center min-h-screen bg-gray-200 flex-col"
     >
-
       {/* Título da seção */}
       <h2 className="pb-4 text-3xl font-bold">
         Funcionalidades
@@ -175,7 +171,6 @@ const Funcionalidades = () => {
             className="flex-1 px-4 py-3 rounded-lg border border-gray-300 bg-white"
           />
 
-
           {/* Botão que chama a função de busca quando clicado */}
           <button
             onClick={buscarPratos}
@@ -183,9 +178,7 @@ const Funcionalidades = () => {
           >
             Buscar
           </button>
-
         </div>
-
 
         {/* Feedback de que o programa está buscando os dados */}
         {loading && (
@@ -194,10 +187,8 @@ const Funcionalidades = () => {
           </p>
         )}
 
-
         {/* Grid com imagens e nomes dos pratos encontrados */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-
           {pratos.map((prato) => (
 
             // Card individual de cada prato encontrado
@@ -205,14 +196,12 @@ const Funcionalidades = () => {
               key={prato.id}
               className="flex flex-col h-full bg-white rounded-xl overflow-hidden shadow"
             >
-
               {/* Imagem do prato */}
               <img
                 src={prato.image}
                 alt={prato.title}
                 className="w-full h-48 object-cover"
               />
-
 
               {/* Informações e botão do prato */}
               <div className="flex flex-col grow p-4">
@@ -222,7 +211,6 @@ const Funcionalidades = () => {
                   {prato.title}
                 </h5>
 
-
                 {/* Botão que chama a função de ver detalhes do prato */}
                 <button
                   onClick={() => buscarDetalhes(prato.id)}
@@ -230,57 +218,41 @@ const Funcionalidades = () => {
                 >
                   Ver detalhes
                 </button>
-
               </div>
-
             </div>
           ))}
 
         </div>
-
-
-        {/* Modal exibido quando um prato é selecionado */}
         {pratoSelecionado && (
-
           <div
             className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4"
-
             // Fecha o modal ao clicar fora do conteúdo
             onClick={() => setPratoSelecionado(null)}
           >
-
             <div
               className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
-
               // Impede que o clique dentro do modal feche o modal
               onClick={(e) => e.stopPropagation()}
             >
-
               {/* Verifica se os detalhes ainda estão carregando */}
               {loadingDetalhes ? (
-
                 <div className="p-10 text-center">
-
                   <p className="text-lg font-semibold">
                     Carregando detalhes...
                   </p>
-
                 </div>
 
               ) : (
 
                 <>
                   {/* ----- Cabeçalho do modal ----- */}
-
                   <div className="relative">
-
                     {/* Imagem do prato */}
                     <img
                       src={pratoSelecionado.image}
                       alt={pratoSelecionado.title}
                       className="w-full h-64 object-cover"
                     />
-
 
                     {/* Botão para fechar o modal */}
                     <button
@@ -289,63 +261,44 @@ const Funcionalidades = () => {
                     >
                       ×
                     </button>
-
                   </div>
 
-
                   {/* ----- Conteúdo do modal ----- */}
-
                   <div className="p-6">
-
                     {/* Nome do prato */}
                     <h3 className="text-3xl font-bold mb-6">
                       {pratoSelecionado.title}
                     </h3>
 
-
                     {/* ----- Ingredientes ----- */}
-
                     <div className="mb-8">
-
                       <h4 className="text-xl font-bold mb-4">
                         🥕 Ingredientes
                       </h4>
 
-
                       {/* Lista de ingredientes */}
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-
                         {pratoSelecionado.extendedIngredients?.map(
                           (ingrediente) => (
-
                             <li
                               key={`${ingrediente.id}-${ingrediente.original}`}
                               className="bg-gray-100 rounded-lg px-4 py-2"
                             >
                               {ingrediente.original}
                             </li>
-
                           )
                         )}
-
                       </ul>
-
                     </div>
 
-
                     {/* ----- Informações nutricionais ----- */}
-
                     <div>
-
                       <h4 className="text-xl font-bold mb-4">
                         📊 Informações nutricionais
                       </h4>
 
-
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-
                         {pratoSelecionado.nutrition?.nutrients
-
                           // Seleciona apenas os nutrientes que serão exibidos
                           ?.filter((nutriente) =>
                             [
@@ -358,43 +311,31 @@ const Funcionalidades = () => {
 
                           // Cria um card para cada nutriente
                           .map((nutriente) => (
-
                             <div
                               key={nutriente.name}
                               className="bg-gray-100 rounded-lg p-4 text-center"
                             >
-
                               {/* Nome do nutriente */}
                               <p className="text-sm text-gray-500">
                                 {nutriente.name}
                               </p>
-
 
                               {/* Quantidade do nutriente */}
                               <p className="text-xl font-bold">
                                 {Math.round(nutriente.amount)}
                                 {nutriente.unit}
                               </p>
-
                             </div>
-
                           ))}
-
                       </div>
-
                     </div>
-
                   </div>
                 </>
               )}
-
             </div>
-
           </div>
         )}
-
       </div>
-
     </div>
   )
 }
