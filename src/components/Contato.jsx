@@ -13,16 +13,15 @@ const Contato = () => {
             placeholder="Digite seu endereço de email"
             className="flex-1 px-4 py-3 rounded-lg border border-gray-300 bg-white"
           />
-
-        </div>
-
-        <div className="flex gap-3 mb-6 sm:w-2xl md:w-4xl w-3-xl">
-
           <input
             type="text"
             placeholder="Digite seu feedback!"
             className="flex-1 px-4 py-3 rounded-lg border border-gray-300 bg-white"
           />
+
+        </div>
+
+        <div className="flex gap-3 mb-6 sm:w-2xl md:w-4xl w-3-xl justify-end">
 
           <button className="px-6 py-3 rounded-lg bg-red-900 text-white font-semibold hover:bg-red-800"
           >
