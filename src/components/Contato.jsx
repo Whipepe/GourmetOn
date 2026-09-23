@@ -7,7 +7,6 @@ const Contato = () => {
         <h3 className="text-2xl mb-12">Por favor, deixe um feedback!</h3>
 
         <div className="flex gap-3 mb-6 sm:w-2xl md:w-4xl w-3-xl">
-
           <input
             type="text"
             placeholder="Digite seu endereço de email"
@@ -22,9 +21,7 @@ const Contato = () => {
         </div>
 
         <div className="flex gap-3 mb-6 sm:w-2xl md:w-4xl w-3-xl justify-end">
-
-          <button className="px-6 py-3 rounded-lg bg-red-900 text-white font-semibold hover:bg-red-800"
-          >
+          <button className="px-6 py-3 rounded-lg bg-red-900 text-white font-semibold hover:bg-red-800">
             Enviar
           </button>
         </div>
